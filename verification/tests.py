@@ -25,7 +25,8 @@ TESTS = {
         prepare_test('f = lambda: 0\n'
                      'g = lambda: 0\n'
                      'c = checkio((f,g))\n',
-                     "RET['code_result'] = (c()==(0,'same')), 'Ok'", None,
+                     "RET['code_result'] = (c()==(0,'same')), 'Ok'",
+                     "RET['checkio((f,g))()'] = c()",
                      "checkio((f,g))()==(0,'same')")
     ],
     "2. Add": [
