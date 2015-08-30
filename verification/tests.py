@@ -24,11 +24,11 @@ TESTS = {
     "1. Init": [
         prepare_test('f = lambda: 0\n'
                      'g = lambda: 0\n'
-                     'c = checkio(f,g)\n',
+                     'c = checkio([f,g])\n',
                      PASS_CODE, None, None),
         prepare_test('f = lambda: 0\n'
                      'g = lambda: 0\n'
-                     'c = checkio(f,g)\n',
+                     'c = checkio([f,g])\n',
                      (True,'Bad'), None, None)                     
     ],
     "2. Add": [
