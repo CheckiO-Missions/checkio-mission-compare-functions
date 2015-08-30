@@ -1,8 +1,8 @@
 init_code = """
-if not "Friends" in USER_GLOBAL:
-    raise NotImplementedError("Where is 'Friends'?")
+if not "checkio" in USER_GLOBAL:
+    raise NotImplementedError("Where is 'checkio'?")
 
-Friends = USER_GLOBAL['Friends']
+checkio = USER_GLOBAL['checkio']
 """
 
 PASS_CODE = """
