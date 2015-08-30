@@ -76,7 +76,6 @@ def check_data(answer_data, user_data):
     #    return MS_ERROR
 
     # check function
-    ans_h = answer_data['h']
     ans_args = answer_data['args']
     ans_kwargs = answer_data['kwargs']
     ans_results = answer_data['result']
