@@ -10,8 +10,10 @@ Each test is dict with
 TESTS = {
     "X+Y": [
         {
-            "input":[lambda x,y:x+y,lambda x,y:(x**2-y**2)/(x-y)],
-            "answer":{"args": (1,3),"kwargs": {},"result": (4,'same')},
+            "input":1,
+            "answer":1,
+            #"input":[lambda x,y:x+y,lambda x,y:(x**2-y**2)/(x-y)],
+            #"answer":{"args": (1,3),"kwargs": {},"result": (4,'same')},
             "explanation":""
         }      
     ]
