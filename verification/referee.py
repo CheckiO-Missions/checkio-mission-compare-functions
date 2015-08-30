@@ -34,6 +34,12 @@ from checkio.referees import checkers
 
 from tests import TESTS
 
+ALL_OK = True, {"error_code": 100,
+                "message": "All ok."}
+
+def check_data(answer_data, user_data):
+    return ALL_OK
+
 api.add_listener(
     ON_CONNECT,
     CheckiOReferee(
@@ -43,6 +49,7 @@ api.add_listener(
         #    'python-3': cover
         #},
         # checker=None,  # checkers.float.comparison(2)
+        checker=check_data
         # add_allowed_modules=[],
         # add_close_builtins=[],
         # remove_allowed_modules=[]
