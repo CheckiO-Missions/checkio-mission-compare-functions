@@ -23,7 +23,8 @@ def prepare_test(middle_code, test_code, show_code, show_answer):
 TESTS = {
     "1. Init": [
         prepare_test('f = lambda: 0\n'
-                     'g = lambda: 0\n',
+                     'g = lambda: 0\n'
+                     'c = checkio(2)\n',
                      PASS_CODE, None, None)
     ],
     "2. Add": [
