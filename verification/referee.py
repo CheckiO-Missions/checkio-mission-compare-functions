@@ -76,11 +76,11 @@ def check_data(answer_data, user_data):
     #    return MS_ERROR
 
     # check function
-    ans_args = answer_data['args']
-    ans_kwargs = answer_data['kwargs']
-    ans_results = answer_data['result']
+    #ans_args = answer_data['args']
+    #ans_kwargs = answer_data['kwargs']
+    #ans_results = answer_data['result']
     
-    user_result = user_data(*ans_args,**ans_kwargs)
+    #user_result = user_data(*ans_args,**ans_kwargs)
     #return ans_result == user_result 
     
     
