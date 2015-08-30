@@ -10,7 +10,7 @@ Each test is dict with
 TESTS = {
     "Basics": [
         {
-            "one": "$5.34",
+            "input": "$5.34",
             "two": "$5.34"
         }          
     ]
