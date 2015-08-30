@@ -34,25 +34,14 @@ from checkio.referees import checkers
 
 from tests import TESTS
 
-TYPE_ERROR = False, {"error_code": 1, "message": "You should return a callable function."}
-ALL_OK = True, {"error_code": 100,
-                "message": "All ok."}
-
-def check_data(answer_data, user_data):
-    if not hasattr(user_data,'__call__'):
-        return TYPE_ERROR
-    return ALL_OK
+def checker(result, test_data):
+    return result['code_result']
 
 api.add_listener(
     ON_CONNECT,
-    CheckiOReferee(
+    CheckiORefereeCode(
         tests=TESTS,
-        #cover_code={
-        #    'python-27': cover,
-        #    'python-3': cover
-        #},
-        # checker=None,  # checkers.float.comparison(2)
-        checker=check_data
+        check_result=checker,
         # add_allowed_modules=[],
         # add_close_builtins=[],
         # remove_allowed_modules=[]
