@@ -81,7 +81,7 @@ def check_data(answer_data, user_data):
     ans_results = answer_data['result']
     
     user_result = user_data(*ans_args,**ans_kwargs)
-    return ans_result == user_result 
+    #return ans_result == user_result 
     
     
 
