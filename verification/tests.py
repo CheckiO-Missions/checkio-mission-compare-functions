@@ -25,7 +25,11 @@ TESTS = {
         prepare_test('f = lambda: 0\n'
                      'g = lambda: 0\n'
                      'c = checkio(f,g)\n',
-                     PASS_CODE, None, None)
+                     PASS_CODE, None, None),
+        prepare_test('f = lambda: 0\n'
+                     'g = lambda: 0\n'
+                     'c = checkio(f,g)\n',
+                     (True,'Bad'), None, None)                     
     ],
     "2. Add": [
         prepare_test('f = Friends([{"1", "2"}, {"3", "1"}])\n'
