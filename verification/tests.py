@@ -25,7 +25,7 @@ TESTS = {
         prepare_test(
             'f = lambda: 0\n'
             'g = lambda: 0\n',
-            'RET["code_result"] = True',
+            'RET["code_result"] = True, "Ok"',
             'SHOWC',
             'SHOWA')
     ]}
