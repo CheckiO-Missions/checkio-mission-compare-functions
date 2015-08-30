@@ -26,8 +26,8 @@ TESTS = {
                      'g = lambda: 0\n'
                      'c = checkio((f,g))\n',
                      "RET['code_result'] = (c()==(0,'same')), 'Ok'",
-                     "RET['checkio((f,g))()'] = c()",
-                     None)
+                     None,
+                     "RET['code_result'] = (0,'same')")
     ],
     "2. Add": [
         prepare_test('f = Friends([{"1", "2"}, {"3", "1"}])\n'
