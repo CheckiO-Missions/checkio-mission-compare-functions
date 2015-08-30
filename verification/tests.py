@@ -22,9 +22,10 @@ def prepare_test(middle_code, test_code, show_code, show_answer):
 
 TESTS = {
     "1. Init": [
-        prepare_test('Friends(({"a", "b"}, {"b", "c"}, {"c", "a"}, {"a", "c"}))\n',
-                     PASS_CODE, None, None),
-        prepare_test('Friends([{"1", "2"}, {"3", "1"}])\n', PASS_CODE, None, None),
+        prepare_test('f = lambda: 0\n'
+                     'g = lambda: 0\n'
+                     'c = checkio(f,g)\n',
+                     PASS_CODE, None, None)
     ],
     "2. Add": [
         prepare_test('f = Friends([{"1", "2"}, {"3", "1"}])\n'
