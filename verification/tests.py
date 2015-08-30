@@ -11,7 +11,7 @@ TESTS = {
     "Basics": [
         {
             "input": "$5.34",
-            "two": "$5.34"
+            "answer": lambda:0
         }          
     ]
 }
