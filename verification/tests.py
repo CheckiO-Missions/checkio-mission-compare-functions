@@ -24,7 +24,7 @@ TESTS = {
     "1. Init": [
         prepare_test(
             'f = lambda: 0\n'
-            'g = lambda: 0\n'
+            'g = lambda: 0\n',
             'RET["code_result"] = True',
             'SHOWC',
             'SHOWA')
