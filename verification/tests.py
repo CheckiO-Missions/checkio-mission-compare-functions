@@ -24,10 +24,7 @@ TESTS = {
     "1. Init": [
         prepare_test('f = lambda: 0\n'
                      'g = lambda: 0\n',
-                     PASS_CODE, None, None),
-        prepare_test('f = lambda: 0\n'
-                     'g = lambda: 0\n',
-                     (True,'Bad'), None, None)                     
+                     PASS_CODE, None, None)
     ],
     "2. Add": [
         prepare_test('f = Friends([{"1", "2"}, {"3", "1"}])\n'
