@@ -34,10 +34,13 @@ from checkio.referees import checkers
 
 from tests import TESTS
 
+TYPE_ERROR = False, {"error_code": 1, "message": "You should return a callable function."}
 ALL_OK = True, {"error_code": 100,
                 "message": "All ok."}
 
 def check_data(answer_data, user_data):
+    if not hasattr(user_data,'__call__'):
+        return TYPE_ERROR
     return ALL_OK
 
 api.add_listener(
