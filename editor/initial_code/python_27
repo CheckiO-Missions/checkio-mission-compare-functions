@@ -1,16 +1,41 @@
-def checkio(text):
-    
-    "Convert Euro style currency in dollars to US/UK style"
-    return ""
+def checkio(f,g):
 
-if __name__ == '__main__':    
+    return lambda:(None,None)
 
+
+  
+if __name__ == '__main__':
+       
     #These "asserts" using only for self-checking and not necessary for auto-testing
-    assert checkio("$1.234.567,89") == "$1,234,567.89" , "1st Example"
-    assert checkio("$0,89") == "$0.89" , "2nd Example"
-    assert checkio("Euro Style = $12.345,67, US Style = $12,345.67") == \
-                   "Euro Style = $12,345.67, US Style = $12,345.67" , "European and US"
-    assert checkio("Us Style = $12,345.67, Euro Style = $12.345,67") == \
-                   "Us Style = $12,345.67, Euro Style = $12,345.67" , "US and European"
-    assert checkio("$1.234, $5.678 and $9") == \
-                   "$1,234, $5,678 and $9", "Dollars without cents"
+    
+    assert checkio(lambda x,y:x+y,    
+                   lambda x,y:(x**2-y**2)/(x-y))\
+                   (1,3)==(4,'same'), "Function: x+y, first"
+    assert checkio(lambda x,y:x+y,    
+                   lambda x,y:(x**2-y**2)/(x-y))\
+                   (1,2)==(3,'same'), "Function: x+y, second"
+    assert checkio(lambda x,y:x+y,    
+                   lambda x,y:(x**2-y**2)/(x-y))\
+                   (1,1.01)==(2.01,'different'), "x+y, third"
+    assert checkio(lambda x,y:x+y,    
+                   lambda x,y:(x**2-y**2)/(x-y))\
+                   (1,1)==(2,'g_error'), "x+y, fourth"
+
+    f = lambda nums:[x for x in nums if ~x%2]
+    def g(nums):
+      for i in range(len(nums)):
+        if nums[i]%2==1:
+          nums.pop(i)
+      return nums 
+    assert checkio(f,g)([2,4,6,8]) == ([2,4,6,8],'same'), "evens, first"
+    assert checkio(f,g)([2,3,4,6,8]) == ([2,4,6,8],'g_error'), "evens, second"         
+                   
+    assert checkio(lambda n:" ".join("BuFi#"[-k:2-k]+"zz"for k in(3,5)if n%k==0)or str(n),
+                   lambda n:('Fizz'*(n%3==0) + ' ' + 'Buzz'*(n%5==0)).strip())\
+                   (6)==('Fizz','same')                   
+    assert checkio(lambda n:" ".join("BuFi#"[-k:2-k]+"zz"for k in(3,5)if n%k==0)or str(n),
+                   lambda n:('Fizz'*(n%3==0) + ' ' + 'Buzz'*(n%5==0)).strip())\
+                   (30)==('Fizz Buzz','same')
+    assert checkio(lambda n:" ".join("BuFi#"[-k:2-k]+"zz"for k in(3,5)if n%k==0)or str(n),
+                   lambda n:('Fizz'*(n%3==0) + ' ' + 'Buzz'*(n%5==0)).strip())\
+                   (7)==('7','different')                   
