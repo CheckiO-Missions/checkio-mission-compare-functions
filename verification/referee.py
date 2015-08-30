@@ -47,10 +47,10 @@ api.add_listener(
     ON_CONNECT,
     CheckiOReferee(
         tests=TESTS,
-        #cover_code={
-        #    'python-27': cover,
-        #    'python-3': cover
-        #},
+        cover_code={
+            'python-27': cover,
+            'python-3': cover
+        },
         # checker=None,  # checkers.float.comparison(2)
         checker=check_data
         # add_allowed_modules=[],
