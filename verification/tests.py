@@ -25,9 +25,7 @@ TESTS = {
         prepare_test(
             'f = lambda: 0\n'
             'g = lambda: 0\n'
-            'c = checkio(f,g)\n'
-            'r = c(1)\n',
-            'RET["code_result"] = (r == (0,"same"))',
+            'RET["code_result"] = True',
             'SHOWC',
             'SHOWA')
     ]}
