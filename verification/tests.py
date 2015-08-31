@@ -22,10 +22,14 @@ def prepare_test(middle_code, test_code, show_code, show_answer):
 
 TESTS = {
     "1. Init": [
-        prepare_test('f = lambda: 0\n'
-                     'g = lambda: 0\n'
+        prepare_test('f = lambda x: abs(x)\n'
+                     'def g(x):\n'
+                     '  if x>0:\n'
+                     '    x\n'
+                     '  elif x<0:\n'
+                     '    -x\n',
                      'c = checkio((f,g))\n',
-                     "RET['code_result'] = (c()==(0,'same')), 'Ok'",
+                     "RET['code_result'] = (c(1)==(1,'same')), 'Ok'",
                      None,
                      "RET['code_result'] = (0,'same')")
     ],
