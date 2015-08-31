@@ -52,9 +52,9 @@ TESTS = {
                      '    return -x\n'
                      'c = checkio(f,g)\n'
                      'result = c(0)\n',
-                     "RET['code_result'] = (result==(0,'same')), str(result)",
+                     "RET['code_result'] = (result==(0,'different')), str(result)",
                      None,
-                     "checkio(f,g)(1) = (0,'different')")                     
+                     "checkio(f,g)(0) = (0,'different')")                     
     ],
     "2. Add": [
         prepare_test('f = Friends([{"1", "2"}, {"3", "1"}])\n'
