@@ -69,32 +69,26 @@ TESTS = {
     ],
     "2. Remove Elements From List": [
         prepare_test('f = lambda lst,rmv: [x for x in lst if x!=rmv]\n'
-                     'g = lambda lst,rmv: lst.remove(rmv)\n'
+                     'g = lambda lst,rmv: lst.remove(rmv) or lst\n'
                      'c = checkio(f,g)\n'
                      'result = c([3,2,3,4,3],2)\n',
                      "RET['code_result'] = (result==([3,3,4,3],'same')), str(result)",
                      None,
                      "checkio(f,g)([3,2,3,4,3],3) = ([3,3,4,3],'same')"),          
         prepare_test('f = lambda lst,rmv: [x for x in lst if x!=rmv]\n'
-                     'g = lambda lst,rmv: lst.remove(rmv)\n'
+                     'g = lambda lst,rmv: lst.remove(rmv) or lst\n'
                      'c = checkio(f,g)\n'
                      'result = c([3,2,3,4,3],3)\n',
                      "RET['code_result'] = (result==([2,4],'different')), str(result)",
                      None,
                      "checkio(f,g)([3,2,3,4,3],3) = ([2,4],'different')"),
         prepare_test('f = lambda lst,rmv: [x for x in lst if x!=rmv]\n'
-                     'g = lambda lst,rmv: lst.remove(rmv)\n'
+                     'g = lambda lst,rmv: lst.remove(rmv) or lst\n'
                      'c = checkio(f,g)\n'
                      'result = c([3,2,3,4,3],5)\n',
                      "RET['code_result'] = (result==([3,2,3,4,3],'g_error')), str(result)",
                      None,
-                     "checkio(f,g)([3,2,3,4,3],5) = ([3,2,3,4,3],'g_error')"),                     
-        prepare_test('f = Friends([{"And", "Or"}, {"For", "And"}])\n'
-                     'add_result = f.add({"Or", "And"})\n',
-                     "RET['code_result'] = add_result is False, str(add_result)",
-                     'f = Friends([{"And", "Or"}, {"For", "And"}])\n'
-                     'f.add({"Or", "And"})\n',
-                     "False")
+                     "checkio(f,g)([3,2,3,4,3],5) = ([3,2,3,4,3],'g_error')")
     ],
     "3. Remove": [
         prepare_test('f = Friends([{"1", "2"}, {"3", "1"}])\n'
