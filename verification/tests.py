@@ -27,7 +27,7 @@ TESTS = {
                      '  if x>0:\n'
                      '    x\n'
                      '  elif x<0:\n'
-                     '    -x\n',
+                     '    -x\n'
                      'c = checkio((f,g))\n',
                      "RET['code_result'] = (c(1)==(1,'same')), 'Ok'",
                      None,
