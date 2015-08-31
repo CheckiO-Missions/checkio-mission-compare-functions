@@ -31,8 +31,8 @@ TESTS = {
                      'c = checkio(f,g)\n'
                      'result = c(1)\n',
                      "RET['code_result'] = (result==(1,'same')), str(result)",
-                     "c(1)",
-                     "RET['code_result'] = (0,'same')")
+                     None,
+                     "checkio(f,g)(1) = (1,'same')")
     ],
     "2. Add": [
         prepare_test('f = Friends([{"1", "2"}, {"3", "1"}])\n'
