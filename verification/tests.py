@@ -52,9 +52,20 @@ TESTS = {
                      '    return -x\n'
                      'c = checkio(f,g)\n'
                      'result = c(0)\n',
-                     "RET['code_result'] = (result==(0,'different')), str(result)",
+                     "RET['code_result'] = (result==(0,'g_error')), str(result)",
                      None,
-                     "checkio(f,g)(0) = (0,'different')")                     
+                     "checkio(f,g)(0) = (0,'g_error')"),
+        prepare_test('def f(x):\n'
+                     '  if x>0:\n'
+                     '    return x\n'
+                     '  elif x<0:\n'
+                     '    return -x\n'
+                     'g = lambda x: abs(x)\n'
+                     'c = checkio(f,g)\n'
+                     'result = c(0)\n',
+                     "RET['code_result'] = (result==(0,'f_error')), str(result)",
+                     None,
+                     "checkio(f,g)(1) = (0,'f_error')"),                     
     ],
     "2. Add": [
         prepare_test('f = Friends([{"1", "2"}, {"3", "1"}])\n'
