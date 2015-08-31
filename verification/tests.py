@@ -93,7 +93,7 @@ TESTS = {
     "3. Hello World": [
         prepare_test('def f(hello="hello",world="world"):\n'
                      '  return hello + " " + world\n'
-                     'def g(hello,world="world):\n'
+                     'def g(hello,world="world"):\n'
                      '  return hello + " " + world\n'
                      'c = checkio(f,g)\n'
                      'result = c("hallo",world="earth")\n',
@@ -102,7 +102,7 @@ TESTS = {
                      "checkio(f,g)('hallo',world='earth') = ('hallo earth','same')"),
         prepare_test('def f(hello="hello",world="world"):\n'
                      '  return hello + " " + world\n'
-                     'def g(hello,world="world):\n'
+                     'def g(hello,world="world"):\n'
                      '  return hello + " " + world\n'
                      'c = checkio(f,g)\n'
                      'result = c(hello="aloha")\n',
@@ -111,7 +111,7 @@ TESTS = {
                      "checkio(f,g)(hello='aloha') = ('aloha world','same')"),
         prepare_test('def f(hello="hello",world="world"):\n'
                      '  return hello + " " + world\n'
-                     'def g(hello,world="world):\n'
+                     'def g(hello,world="world"):\n'
                      '  return hello + " " + world\n'
                      'c = checkio(f,g)\n'
                      'result = c("planet",hello="ahoi")\n',
@@ -120,7 +120,7 @@ TESTS = {
                      "checkio(f,g)('planet',hello='ahoi') = (None,'both_error')"),
         prepare_test('def f(hello="hello",world="world"):\n'
                      '  return hello + " " + world\n'
-                     'def g(hello,world="world):\n'
+                     'def g(hello,world="world"):\n'
                      '  return hello + " " + world\n'
                      'c = checkio(f,g)\n'
                      'result = c()\n',
