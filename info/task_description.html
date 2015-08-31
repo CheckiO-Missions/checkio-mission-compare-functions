@@ -9,13 +9,29 @@
     <p>
         <span>- The Big Band Theory : "The Lizard-Spock Expansion"</span>
     </p>
-</blockquote> 
+</blockquote>
+
+<p class="story">
+    
+</p>
  
 <p>
-    Many countries use different conventions for the thousands separator and decimal mark.  For example in the Netherlands
-    one million one thousand two hundred and eighty one-hundredths is written as 1.001.200,80, but in the US this is written
-    as 1,001,200.80.  Use your coding skills to convert dollars in the first style (Netherlands, Germany, Russia, Turkey,
-    Brazil, and others) to the second style (US, UK, Canada, China, Japan, Mexico, and others).
+    Two functions <em>f</em> and <em>g</em> are provided as inputs to <em>checkio</em>.  The first function <em>f</em> is 
+    the primary function and the second function <em>g</em> is the backup.  Use your coding skills to return a third function
+    <em>h</em> which returns the same output as <em>f</em> unless <em>f</em> raises an exception or returns None.  In this
+    case <em>h</em> should return the same output as <em>g</em>.
+</p>
+
+<p>
+    As a second output, <em>h</em> should return a status string indicating whether the function values are the same and
+    if either function errored.  A function errors if it raises an exception or returns a null value (None).  The status
+    string should be: "same" if f and g return the same output and neither errs, "different" is f and g return
+    different outputs and neither errs, "f_error" if f errs but not g, "g_error" if g errs but not f, or "both_error" if
+    both err.
+</p>
+
+<p>
+    The third function should return the 
 </p>
 
 <p>
