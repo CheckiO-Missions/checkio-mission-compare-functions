@@ -105,15 +105,6 @@ TESTS = {
                      'def g(hello,world="world):\n'
                      '  return hello + " " + world\n'
                      'c = checkio(f,g)\n'
-                     'result = c("hallo",world="earth")\n',
-                     "RET['code_result'] = (result==('hallo earth','same')), str(result)",
-                     None,
-                     "checkio(f,g)('hallo',world='earth') = ('hallo earth','same')"),
-        prepare_test('def f(hello="hello",world="world"):\n'
-                     '  return hello + " " + world\n'
-                     'def g(hello,world="world):\n'
-                     '  return hello + " " + world\n'
-                     'c = checkio(f,g)\n'
                      'result = c(hello="aloha")\n',
                      "RET['code_result'] = (result==('aloha world','same')), str(result)",
                      None,
