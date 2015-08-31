@@ -29,7 +29,7 @@ TESTS = {
                      '  elif x<0:\n'
                      '    return -x\n'
                      'c = checkio(f,g)\n',
-                     "RET['code_result'] = (c(1)==(1,'same')), 'Ok'",
+                     "RET['code_result'] = (c(1)==(1,'same')), 'Okk'",
                      "c(1)",
                      "RET['code_result'] = (0,'same')")
     ],
