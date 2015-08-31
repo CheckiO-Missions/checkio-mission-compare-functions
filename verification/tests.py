@@ -5,9 +5,9 @@ if not "checkio" in USER_GLOBAL:
 checkio = USER_GLOBAL['checkio']
 """
 
-PASS_CODE = """
-RET['code_result'] = True, "Ok"
-"""
+#PASS_CODE = """
+#RET['code_result'] = True, "Ok"
+#"""
 
 
 def prepare_test(middle_code, test_code, show_code, show_answer):
