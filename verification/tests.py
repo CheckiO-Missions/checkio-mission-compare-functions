@@ -30,7 +30,7 @@ TESTS = {
                      '    -x\n'
                      'c = checkio(f,g)\n',
                      "RET['code_result'] = (c(1)==(1,'same')), 'Ok'",
-                     None,
+                     "c(1)",
                      "RET['code_result'] = (0,'same')")
     ],
     "2. Add": [
