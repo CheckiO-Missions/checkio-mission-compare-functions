@@ -24,27 +24,18 @@
 
 <p>
     As a second output, <em>h</em> should return a status string indicating whether the function values are the same and
-    if either function errored.  A function errors if it raises an exception or returns a null value (None).  The status
+    if either function erred.  A function errs if it raises an exception or returns a null value (None).  The status
     string should be: "same" if f and g return the same output and neither errs, "different" is f and g return
     different outputs and neither errs, "f_error" if f errs but not g, "g_error" if g errs but not f, or "both_error" if
     both err.
 </p>
 
 <p>
-    The third function should return the 
+    <strong>Input: </strong> Two functions: f (primary) and g (backup).
 </p>
 
 <p>
-    Only currency amounts in dollars should be converted: $1.234,50 to $1,234.50, $1.000 to $1,000, and $4,57 to $4.57.
-    But don't convert your router's IP address 192.168.1.1.  Also leave currency in the US style unchanged.
-</p>
-
-<p>
-    <strong>Input: </strong> A string containing dollar amounts to be converted.
-</p>
-
-<p>
-    <strong>Output: </strong> A string with converted currencies.
+    <strong>Output: </strong> A function h which takes arbitrary inputs and returns a two-tuple.
 </p>
 
 
@@ -54,19 +45,19 @@
         <strong>Example:</strong>
     </p>
     <pre class="brush: python">
-        checkio("Lot 192.001 costs $1.000,94.") == "Lot 192.001 costs $1,000.94."
-        checkio("$1,23 + $2,34 = $3,57.") == "$1.23 + $2.34 = $3.57."</pre>
+        f = lambda x,y: x+y
+        g = lambda x,y: (x**2 - y**2)/(x-y)
+        checkio(f,g)(1,3) == (4,"same")
+        checkio(f,g)(1,1.01) == (2.01,"different") # numerical precision difference</pre>
 </div>
 
 <p class="for_info_only">
     <strong>How it is used: </strong>
-    This is an exercise in working with strings and using the Python standard library.
+    This is an exercise in working with functions as first class objects.
 </p>
 
 <p>
     <strong>Precondition:</strong>
-    0 &lt; len(text) &le; 1000;<br>
-    len(fractional_part_of_currency) in {0,2};<br>
-    all(s[-1].isdigit() for s in currency_substrings);<br>
-    all(s[0] == '$' for s in currency_substrings)<br>
+    hasattr(f,'__call__');<br>
+    hasattr(g,'__call__')<br>
 </p>
