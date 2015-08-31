@@ -126,7 +126,7 @@ TESTS = {
                      'result = c()\n',
                      "RET['code_result'] = (result==('hello_world','g_error')), str(result)",
                      None,
-                     "checkio(f,g)() = (None,'g_error')"),                       
+                     "checkio(f,g)() = ('hello world','g_error')"),                       
     ],
     "4. Names": [
         prepare_test(
