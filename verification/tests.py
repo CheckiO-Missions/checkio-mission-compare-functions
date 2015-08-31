@@ -25,9 +25,9 @@ TESTS = {
         prepare_test('f = lambda x: abs(x)\n'
                      'def g(x):\n'
                      '  if x>0:\n'
-                     '    x\n'
+                     '    return x\n'
                      '  elif x<0:\n'
-                     '    -x\n'
+                     '    return -x\n'
                      'c = checkio(f,g)\n',
                      "RET['code_result'] = (c(1)==(1,'same')), 'Ok'",
                      "c(1)",
