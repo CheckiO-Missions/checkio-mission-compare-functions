@@ -135,7 +135,7 @@ TESTS = {
                      '  return hello + " " + world\n'
                      'c = checkio(f,g)\n'
                      'result = c()\n',
-                     "RET['code_result'] = (result==('hello_world','g_error')), str(result)",
+                     "RET['code_result'] = (result==('hello world','g_error')), str(result)",
                      None,
                      "checkio(f,g)() = ('hello world','g_error')"),
         prepare_test('def f(hello="hello",world="WORLD"):\n'
