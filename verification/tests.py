@@ -21,7 +21,7 @@ def prepare_test(middle_code, test_code, show_code, show_answer):
 
 
 TESTS = {
-    "1. Init": [
+    "1. Absolute Value": [
         prepare_test('f = lambda x: abs(x)\n'
                      'def g(x):\n'
                      '  if x>0:\n'
@@ -32,7 +32,29 @@ TESTS = {
                      'result = c(1)\n',
                      "RET['code_result'] = (result==(1,'same')), str(result)",
                      None,
-                     "checkio(f,g)(1) = (1,'same')")
+                     "checkio(f,g)(1) = (1,'same')"),
+        prepare_test('f = lambda x: abs(x)\n'
+                     'def g(x):\n'
+                     '  if x>0:\n'
+                     '    return x\n'
+                     '  elif x<0:\n'
+                     '    return -x\n'
+                     'c = checkio(f,g)\n'
+                     'result = c(-1)\n',
+                     "RET['code_result'] = (result==(1,'same')), str(result)",
+                     None,
+                     "checkio(f,g)(1) = (1,'same')"),
+        prepare_test('f = lambda x: abs(x)\n'
+                     'def g(x):\n'
+                     '  if x>0:\n'
+                     '    return x\n'
+                     '  elif x<0:\n'
+                     '    return -x\n'
+                     'c = checkio(f,g)\n'
+                     'result = c(0)\n',
+                     "RET['code_result'] = (result==(0,'same')), str(result)",
+                     None,
+                     "checkio(f,g)(1) = (0,'different')")                     
     ],
     "2. Add": [
         prepare_test('f = Friends([{"1", "2"}, {"3", "1"}])\n'
