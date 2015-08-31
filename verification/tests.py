@@ -90,26 +90,52 @@ TESTS = {
                      None,
                      "checkio(f,g)([3,2,3,4,3],5) = ([3,2,3,4,3],'g_error')")
     ],
-    "3. Remove": [
-        prepare_test('f = Friends([{"1", "2"}, {"3", "1"}])\n'
-                     'remove_result = f.remove({"2", "4"})\n',
-                     "RET['code_result'] = remove_result is False, str(remove_result)",
-                     'f = Friends([{"1", "2"}, {"3", "1"}])\n'
-                     'f.remove({"2", "4"})',
-                     "False"),
-        prepare_test('f = Friends([{"1", "2"}, {"3", "1"}])\n'
-                     'remove_result = f.remove({"11", "12"})\n',
-                     "RET['code_result'] = remove_result is False, str(remove_result)",
-                     'f = Friends([{"1", "2"}, {"3", "1"}])\n'
-                     'f.remove({"11", "12"})',
-                     "False"),
-
-        prepare_test('f = Friends([{"And", "Or"}, {"For", "And"}])\n'
-                     'remove_result = f.remove({"And", "Or"})\n',
-                     "RET['code_result'] = remove_result is True, str(remove_result)",
-                     'f = Friends([{"And", "Or"}, {"For", "And"}])\n'
-                     'f.remove({"And", "Or"})\n',
-                     "True"),
+    "3. Hello World": [
+        prepare_test('def f(hello="hello",world="world"):\n'
+                     '  return hello + " " + world\n'
+                     'def g(hello,world="world):\n'
+                     '  return hello + " " + world\n'
+                     'c = checkio(f,g)\n'
+                     'result = c("hallo",world="earth")\n',
+                     "RET['code_result'] = (result==('hallo earth','same')), str(result)",
+                     None,
+                     "checkio(f,g)('hallo',world='earth') = ('hallo earth','same')"),
+        prepare_test('def f(hello="hello",world="world"):\n'
+                     '  return hello + " " + world\n'
+                     'def g(hello,world="world):\n'
+                     '  return hello + " " + world\n'
+                     'c = checkio(f,g)\n'
+                     'result = c("hallo",world="earth")\n',
+                     "RET['code_result'] = (result==('hallo earth','same')), str(result)",
+                     None,
+                     "checkio(f,g)('hallo',world='earth') = ('hallo earth','same')"),
+        prepare_test('def f(hello="hello",world="world"):\n'
+                     '  return hello + " " + world\n'
+                     'def g(hello,world="world):\n'
+                     '  return hello + " " + world\n'
+                     'c = checkio(f,g)\n'
+                     'result = c(hello="aloha")\n',
+                     "RET['code_result'] = (result==('aloha world','same')), str(result)",
+                     None,
+                     "checkio(f,g)(hello='aloha') = ('aloha world','same')"),
+        prepare_test('def f(hello="hello",world="world"):\n'
+                     '  return hello + " " + world\n'
+                     'def g(hello,world="world):\n'
+                     '  return hello + " " + world\n'
+                     'c = checkio(f,g)\n'
+                     'result = c("planet",hello="ahoi")\n',
+                     "RET['code_result'] = (result==(None,'both_error')), str(result)",
+                     None,
+                     "checkio(f,g)('planet',hello='ahoi') = (None,'both_error')"),
+        prepare_test('def f(hello="hello",world="world"):\n'
+                     '  return hello + " " + world\n'
+                     'def g(hello,world="world):\n'
+                     '  return hello + " " + world\n'
+                     'c = checkio(f,g)\n'
+                     'result = c()\n',
+                     "RET['code_result'] = (result==('hello_world','g_error')), str(result)",
+                     None,
+                     "checkio(f,g)() = (None,'g_error')"),                       
     ],
     "4. Names": [
         prepare_test(
