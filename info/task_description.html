@@ -29,18 +29,19 @@
 <p>
     Two functions <em>f</em> and <em>g</em> are provided as inputs to <em>checkio</em>.  The first function <em>f</em> is 
     the primary function and the second function <em>g</em> is the backup.  Use your coding skills to return a third function
-    <em>h</em> which returns the same output as <em>f</em> unless <em>f</em> raises an exception or returns None.  In this
-    case <em>h</em> should return the same output as <em>g</em>.
+    <em>h</em> which returns the same output as <em>f</em> unless <em>f</em> raises an exception or returns <em>None</em>.
+    In this case <em>h</em> should return the same output as <em>g</em>.  If both <em>f</em> and <em>g</em> raise exceptions
+    or return <em>None</em>, then <em>h</em> should return <em>None</em>.
 </p>
 
 <p>
     As a second output, <em>h</em> should return a status string indicating whether the function values are the same and
-    if either function erred.  A function errs if it raises an exception or returns a null value (None).
+    if either function erred.  A function errs if it raises an exception or returns a null value (<em>None</em>).
 </p>
 <p>
-    The status string should be set to: "same" if f and g return the same output and neither errs, "different" if f and g return
-    different outputs and neither errs, "f_error" if f errs but not g, "g_error" if g errs but not f, or "both_error" if
-    both err.
+    The status string should be set to: "same" if <em>f</em> and <em>g</em> return the same output and neither errs,
+    "different" if <em>f</em> and <em>g</em> return different outputs and neither errs, "f_error" if <em>f</em> errs 
+    but not <em>g</em>, "g_error" if <em>g</em> errs but not <em>f</em>, or "both_error" if both err.
 </p>
 
 <p>
